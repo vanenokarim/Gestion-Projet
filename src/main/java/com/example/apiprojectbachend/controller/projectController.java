@@ -41,7 +41,8 @@ public class projectController {
         updateProject.setNom(projetDetails.getNom());
         updateProject.setLibelle(projetDetails.getLibelle());
         updateProject.setDescription(projetDetails.getDescription());
-        //updateProject.setDatecreation(projetDetails.getDatecreation());
+        updateProject.setStatut(projetDetails.getStatut());
+        updateProject.setDatecreation(projetDetails.getDatecreation());
 
         projetRepository.save(updateProject);
 

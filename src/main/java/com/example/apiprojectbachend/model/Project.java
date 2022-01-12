@@ -20,18 +20,24 @@ public class Project {
     @Column(name = "descriptionProjet")
     private String description;
 
-    /*@Column(name = "datecreationProjet")
-    private Date datecreation;*/
+    @Column(name = "statutProjet")
+    private String statut;
+
+
+    @Column(name = "datecreationProjet")
+    @Temporal(TemporalType.DATE)
+    private Date datecreation;
 
     public Project() {
     }
 
-    public Project(long id, String nom, String libelle, String description) {
+    public Project(long id, String nom, String libelle, String description,String statut, Date datecreation)  {
         this.id = id;
         this.nom = nom;
         this.libelle = libelle;
         this.description = description;
-       // this.datecreation = datecreation;
+        this.statut = statut;
+        this.datecreation = datecreation;
     }
 
     public long getId() {
@@ -66,13 +72,19 @@ public class Project {
         this.description = description;
     }
 
-   /* public Date getDatecreation() {
+    public String getStatut() {
+        return statut;
+    }
+
+    public void setStatut(String statut) {this.statut = statut;}
+
+    public Date getDatecreation() {
         return datecreation;
     }
 
     public void setDatecreation(Date datecreation) {
         this.datecreation = datecreation;
-    }*/
+    }
 
     @Override
     public String toString() {
@@ -81,6 +93,7 @@ public class Project {
                 ", nom='" + nom + '\'' +
                 ", libelle='" + libelle + '\'' +
                 ", description='" + description + '\'' +
+                ", statut='" + statut + '\'' +
                 '}';
     }
 }
